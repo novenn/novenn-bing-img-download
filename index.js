@@ -3,6 +3,7 @@ const path = require('path')
 const cheerio = require('cheerio')
 const request = require('request')
 const moment = require('moment')
+const schedule = require('node-schedule');
 
 const BING_URL = 'https://cn.bing.com/'
 const IMAGE_DIR = path.resolve('./images')
@@ -60,3 +61,8 @@ async function main() {
 }
 
 main()
+const task = schedule.scheduleJob('0 0 2 * * *', () => {
+    main()
+})
+
+// task.cancel()
