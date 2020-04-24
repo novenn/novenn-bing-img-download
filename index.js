@@ -22,11 +22,11 @@ function loadPage(url) {
 
 function extractImageUrl(body) {
     const $ = cheerio.load(body)
-    const imgStr = $('#bgImgProgLoad').data('ultra-definition-src')
-    let url = ''
-    if(/(.*?jpg)/.test(imgStr)) {
-        url = RegExp.$1
-    }
+    const url = $('#bgImgProgLoad').data('ultra-definition-src')
+    // let url = ''
+    // if(/(.*?jpg)/.test(imgStr)) {
+    //     url = RegExp.$1
+    // }
     return url
 }
 
